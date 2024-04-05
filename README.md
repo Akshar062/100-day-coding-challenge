@@ -18,6 +18,6 @@ This repository documents my journey of coding every day for the next 100 days. 
 - Share Your Journey
 
 ## Let's Connect
-Connect with me on [Discord](https://twitter.com/your_username) and [LinkedIn](https://www.linkedin.com/in/akshar-kalathiya-884401281/)!
+Connect with me on [Discord](https://discord.gg/wbrncrqg) and [LinkedIn](https://www.linkedin.com/in/akshar-kalathiya-884401281/)!
 
 Happy coding! 💻✨
