@@ -33,10 +33,5 @@ This is a simple to-do list Android application built using Java. It allows user
 
 ## Credits
 
-- This project was created by [Your Name].
-- Special thanks to [Any contributors or resources you want to credit].
-
-## License
-
-This project is licensed under the [License Name] License - see the [LICENSE.md](LICENSE.md) file for details.
+- This project was created by Akshar Kalathiya.
 
