@@ -6,8 +6,10 @@ import java.util.Date;
 public class Utils {
 
         public static String getCurrentDate() {
-            // return current Date in DD/mm/yyyy format
-            return new Date().toString();
+            // return current date in MM/DD/YYYY format
+            String date = new Date(System.currentTimeMillis()).toString();
+            date = date.substring(4, 10) + ", " + date.substring(date.length() - 4);
+            return date;
         }
         public static String getCurrentTime() {
             // return time in HH:MM format
