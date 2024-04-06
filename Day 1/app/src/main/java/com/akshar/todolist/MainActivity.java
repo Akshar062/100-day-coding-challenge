@@ -1,24 +1,28 @@
 package com.akshar.todolist;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ExpandableListView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.akshar.todolist.adapter.ToDoAdapter;
+import com.akshar.todolist.database.DatabaseHelper;
+import com.akshar.todolist.model.ToDo;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
-
-    private ExpandableListView todoList;
-
-    private FloatingActionButton addButton;
+    private ToDoAdapter toDoAdapter;
+    private DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,35 +35,54 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        todoList = findViewById(R.id.todoList);
-        addButton = findViewById(R.id.addTodo);
-
-        // on click listener for add button
+        RecyclerView todoView = findViewById(R.id.todoList);
+        FloatingActionButton addButton = findViewById(R.id.addTodo);
         addButton.setOnClickListener(v -> {
-            showAddDialog();
+            AddTodoFragment addTodoFragment = new AddTodoFragment();
+            addTodoFragment.show(getSupportFragmentManager(), addTodoFragment.getTag());
         });
+        // Initialize DatabaseHelper
+        databaseHelper = new DatabaseHelper(this);
+        List<ToDo> todoList = databaseHelper.getAllTodoItems();
+        toDoAdapter = new ToDoAdapter(todoList);
+        // Set the adapter to the RecyclerView
+        todoView.setAdapter(toDoAdapter);
+        toDoAdapter.setOnItemClickListener(this::showTodoDetails);
+        toDoAdapter.setOnCheckBoxClickListener(this::updateCheckBox);
+        toDoAdapter.setOnItemLongClickListener(this::deleteTodoItem);
     }
 
-    private void showAddDialog() {
-        // create a dialog
-        Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.add_todo_dialog);
-        dialog.show();
-
-        // get the views from the dialog
-        EditText title = dialog.findViewById(R.id.title);
-        EditText description = dialog.findViewById(R.id.description);
-        Button addButton = dialog.findViewById(R.id.addButton);
-
-        // on click listener for add button
-        addButton.setOnClickListener(v -> {
-            // get the title and description
-            String titleText = title.getText().toString();
-            String descriptionText = description.getText().toString();
-            // add the todo to the list
-            addTodoToList(titleText, descriptionText);
-            // dismiss the dialog
-            dialog.dismiss();
+    private void deleteTodoItem(ToDo toDo) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete Item");
+        builder.setMessage("Are you sure you want to delete this item?");
+        builder.setPositiveButton("Delete", (dialog, which) -> {
+            databaseHelper.deleteTodoItem(toDo.getId());
+            List<ToDo> todoList = databaseHelper.getAllTodoItems();
+            toDoAdapter.updateTodoList(todoList);
         });
+        builder.setNegativeButton("Cancel", null);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+    private void updateCheckBox(@NonNull ToDo toDo) {
+        databaseHelper.updateTodoItem(toDo.getId(), toDo.getTitle(), toDo.getDescription(), toDo.getDate(), toDo.getTime(), toDo.isCompleted() ? 1 : 0);
+        List<ToDo> todoList = databaseHelper.getAllTodoItems();
+        toDoAdapter.updateTodoList(todoList);
+    }
+    private void showTodoDetails(ToDo item) {
+        AddTodoFragment addTodoFragment = new AddTodoFragment(item);
+        addTodoFragment.show(getSupportFragmentManager(), addTodoFragment.getTag());
+
+    }
+    public void addTodoItem(@NonNull ToDo toDo) {
+        databaseHelper.addTodoItem(toDo.getTitle(), toDo.getDescription(), toDo.getDate(), toDo.getTime());
+        List<ToDo> todoList = databaseHelper.getAllTodoItems();
+        toDoAdapter.updateTodoList(todoList);
+    }
+    public void updateTodoItem(@NonNull ToDo toDo) {
+        databaseHelper.updateTodoItem(toDo.getId(), toDo.getTitle(), toDo.getDescription(), toDo.getDate(), toDo.getTime(), toDo.isCompleted() ? 1 : 0);
+        List<ToDo> todoList = databaseHelper.getAllTodoItems();
+        toDoAdapter.updateTodoList(todoList);
     }
 }

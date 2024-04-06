@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="12dp"
+        android:src="@drawable/round_close_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/cardview_light_background" />
+
+<!--    title-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/todoTitleLayout"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/close">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/todoTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/title"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--    description-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/todoDescriptionLayout"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todoTitleLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/todoDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/description"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--    date-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/todoDateLayout"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todoDescriptionLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/todoDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/date"
+            android:inputType="date"
+            android:maxLines="1"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--    time-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/todoTimeLayout"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todoDateLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/todoTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/time"
+            android:inputType="time"
+            android:maxLines="1"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/todoCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:text="Completed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todoTimeLayout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addTodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="20dp"
+        android:elevation="10dp"
+        android:text="@string/add"
+        app:elevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todoTimeLayout" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveTodo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="20dp"
+            android:elevation="10dp"
+            android:text="@string/save"
+            android:visibility="gone"
+            app:elevation="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/addTodo"
+            app:layout_constraintTop_toBottomOf="@+id/todoTimeLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
