@@ -1,6 +1,6 @@
 # ToDoList Android App
 
-![App Demo GIF](demo.gif)
+![App Demo GIF](screenshots/To_Do_App.gif)
 
 ## Description
 
@@ -8,17 +8,11 @@ This is a simple to-do list Android application built using Java. It allows user
 
 ## Screenshots
 
-1. Insert screenshot here
-   ![Screenshot 1](screenshots/screenshot1.png)
 
-2. Insert screenshot here
-   ![Screenshot 2](screenshots/screenshot2.png)
+| Screenshot 1 | Screenshot 2 | Screenshot 3 | Screenshot 4 | Screenshot 5 |
+|---------------|---------------|---------------|---------------|---------------|
+| ![Homescreen](screenshots/Homescreen.png) | ![Add Todo](screenshots/addtodo.png) | ![Complete Task](screenshots/completetask.png) | ![Delete Task](screenshots/deletetask.png) | ![Edit Todo](screenshots/edittodo.png) |
 
-3. Insert screenshot here
-   ![Screenshot 3](screenshots/screenshot3.png)
-
-4. Insert screenshot here
-   ![Screenshot 4](screenshots/screenshot4.png)
 
 ## Features
 
