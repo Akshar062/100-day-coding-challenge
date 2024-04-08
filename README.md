@@ -21,3 +21,7 @@ This repository documents my journey of coding every day for the next 100 days. 
 Connect with me on [Discord](https://discord.gg/wbrncrqg) and [LinkedIn](https://www.linkedin.com/in/akshar-kalathiya-884401281/)!
 
 Happy coding! 💻✨
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
