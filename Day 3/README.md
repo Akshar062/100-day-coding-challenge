@@ -10,7 +10,7 @@ This is a simple to-do list mobile application built using Flutter. It allows us
 
 | Screenshot 1 | Screenshot 2 | Screenshot 3 | Screenshot 4 |
 |--------------|--------------|--------------|--------------|
-| ![Homescreen](screenshot/Homescreen.png) | ![Add Todo](screenshot/addtodo.png) | ![Delete Task](screenshot/edittodo.png) | ![Edit Todo](screenshot/deletetodo.png) |
+| ![Homescreen](screenshot/Homescreen.png) | ![Add Todo](screenshot/addtodo.png) | ![Edit Todo](screenshot/edittodo.png) | ![Delete Task](screenshot/deletetodo.png) |
 
 ## Features
 
