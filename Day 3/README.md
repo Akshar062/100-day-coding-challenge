@@ -1,6 +1,6 @@
 # Flutter ToDoList App
 
-![App Demo GIF](demo.gif)
+![App Demo GIF](screenshot/to_do.gif)
 
 ## Description
 
@@ -8,9 +8,9 @@ This is a simple to-do list mobile application built using Flutter. It allows us
 
 ## Screenshots
 
-| Screenshot 1 | Screenshot 2 | Screenshot 3 | Screenshot 4 | Screenshot 5 |
-|--------------|--------------|--------------|--------------|--------------|
-| ![Homescreen](screenshots/Homescreen.png) | ![Add Todo](screenshots/addtodo.png) | ![Complete Task](screenshots/completetask.png) | ![Delete Task](screenshots/deletetask.png) | ![Edit Todo](screenshots/edittodo.png) |
+| Screenshot 1 | Screenshot 2 | Screenshot 3 | Screenshot 4 |
+|--------------|--------------|--------------|--------------|
+| ![Homescreen](screenshot/Homescreen.png) | ![Add Todo](screenshot/addtodo.png) | ![Delete Task](screenshot/edittodo.png) | ![Edit Todo](screenshot/deletetodo.png) |
 
 ## Features
 
