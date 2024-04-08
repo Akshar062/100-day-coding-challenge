@@ -36,4 +36,4 @@ This is a simple to-do list mobile application built using Flutter. It allows us
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](100-day-coding-challenge/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](100-day-coding-challenge/blob/main/LICENSE) file for details.
