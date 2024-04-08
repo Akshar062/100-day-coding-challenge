@@ -32,3 +32,7 @@ This is a simple to-do list Android application built using Kotlin. It allows us
 ## Credits
 
 - This project was created by AKSHAR KALATHIYA.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](../LICENSE) file for details.
