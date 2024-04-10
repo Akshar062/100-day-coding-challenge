@@ -2,7 +2,7 @@
 
 ## Description
 
-The Basic Music Player App is a straightforward application for playing your music tracks. Developed in Java, this app provides essential playback controls and a simple user interface for easy navigation and enjoyment of your music collection.
+The Basic Music Player App is a straightforward application for playing your music tracks. Developed in Kotlin, this app provides essential playback controls and a simple user interface for easy navigation and enjoyment of your music collection.
 
 ## Key Features
 
@@ -26,7 +26,7 @@ The Basic Music Player App is a straightforward application for playing your mus
 
 ## Technologies Used
 
-- Java
+- Kotlin
 - Android SDK
 
 ## Credits
