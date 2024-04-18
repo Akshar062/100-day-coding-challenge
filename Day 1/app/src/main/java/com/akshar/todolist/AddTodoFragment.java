@@ -23,14 +23,9 @@ public class AddTodoFragment extends BottomSheetDialogFragment {
 
     private TextInputEditText title, description, date, time;
     private ImageView close;
-
     private MaterialButton addTodo,saveBtn;
     private CheckBox completed;
-
     private ToDo toDo;
-
-
-
     public AddTodoFragment() {
     }
 
